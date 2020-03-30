@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="wolvengard.app.rimworldcompanion">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".Buffs"></activity>
+        <activity android:name=".Debuffs" />
+        <activity android:name=".Traits" />
+        <activity android:name=".Traits_Buffs" />
+        <activity android:name=".ProductInfo" />
+        <activity android:name=".Security" />
+        <activity android:name=".Exotics" />
+        <activity android:name=".Drugs" />
+        <activity android:name=".Fabrics" />
+        <activity android:name=".Valuables" />
+        <activity android:name=".Plants" />
+        <activity android:name=".EntityInfo" />
+        <activity android:name=".Mercenaries" />
+        <activity android:name=".Outlanders" />
+        <activity android:name=".Pirates" />
+        <activity android:name=".Tribals" />
+        <activity android:name=".Raiders" />
+        <activity android:name=".Mechanoids" />
+        <activity android:name=".Creatures" />
+        <activity android:name=".Animals" />
+        <activity android:name=".View_pages" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

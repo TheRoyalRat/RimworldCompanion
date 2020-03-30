@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Rimworld Companion</string>
+    <string name="title_screen_text">Rimworld Companion</string>
+    <string name="title_image_desc">Rimworld Title Screen</string>
+    <string name="btn_view_text">View Pages</string>
+    <string name="btn_search_text">Search Page</string>
+    <string name="btn_product_text">Product Info</string>
+    <string name="title_activity_animals">Animals</string>
+    <string name="action_settings">Settings</string>
+</resources>
