@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="wolvengard.app.rimworldcompanion">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -11,28 +10,29 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Buffs"></activity>
-        <activity android:name=".Debuffs" />
-        <activity android:name=".Traits" />
-        <activity android:name=".Traits_Buffs" />
-        <activity android:name=".ProductInfo" />
-        <activity android:name=".Security" />
-        <activity android:name=".Exotics" />
-        <activity android:name=".Drugs" />
-        <activity android:name=".Fabrics" />
-        <activity android:name=".Valuables" />
-        <activity android:name=".Plants" />
-        <activity android:name=".EntityInfo" />
-        <activity android:name=".Mercenaries" />
-        <activity android:name=".Outlanders" />
-        <activity android:name=".Pirates" />
-        <activity android:name=".Tribals" />
-        <activity android:name=".Raiders" />
-        <activity android:name=".Mechanoids" />
-        <activity android:name=".Creatures" />
-        <activity android:name=".Animals" />
-        <activity android:name=".View_pages" />
-        <activity android:name=".MainActivity">
+        <activity android:name="wolvengard.app.rimworldcompanion.Buffs"></activity>
+        <activity android:name="wolvengard.app.rimworldcompanion.Debuffs" />
+        <activity android:name="wolvengard.app.rimworldcompanion.Traits" />
+        <activity android:name="wolvengard.app.rimworldcompanion.Traits_Buffs" />
+        <activity android:name="wolvengard.app.rimworldcompanion.ProductInfo" />
+        <activity android:name="wolvengard.app.rimworldcompanion.Security" />
+        <activity android:name="wolvengard.app.rimworldcompanion.Exotics" />
+        <activity android:name="wolvengard.app.rimworldcompanion.Drugs" />
+        <activity android:name="wolvengard.app.rimworldcompanion.Fabrics" />
+        <activity android:name="wolvengard.app.rimworldcompanion.Valuables" />
+        <activity android:name="wolvengard.app.rimworldcompanion.Plants" />
+        <activity android:name="wolvengard.app.rimworldcompanion.EntityInfo" />
+        <activity android:name="wolvengard.app.rimworldcompanion.Mercenaries" />
+        <activity android:name="wolvengard.app.rimworldcompanion.Outlanders" />
+        <activity android:name="wolvengard.app.rimworldcompanion.Pirates" />
+        <activity android:name="wolvengard.app.rimworldcompanion.Tribals" />
+        <activity android:name="wolvengard.app.rimworldcompanion.Raiders" />
+        <activity android:name="wolvengard.app.rimworldcompanion.Mechanoids" />
+        <activity android:name="wolvengard.app.rimworldcompanion.Creatures" />
+        <activity android:name="wolvengard.app.rimworldcompanion.Animals" />
+        <activity android:name="wolvengard.app.rimworldcompanion.View_pages" />
+        <activity android:name="wolvengard.app.rimworldcompanion.MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
