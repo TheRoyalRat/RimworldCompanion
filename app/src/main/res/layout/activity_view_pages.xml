@@ -2,66 +2,232 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/title_screen"
+    app:layout_constraintHorizontal_chainStyle="spread_inside"
     tools:context=".View_pages">
 
-    <Button
-        android:id="@+id/btn_creatures"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:text="Creatures"
+    <ImageButton
+        android:id="@+id/Gear"
+        android:layout_width="95dp"
+        android:layout_height="98dp"
+        android:contentDescription="Gear"
+        app:layout_constraintBottom_toBottomOf="@+id/Technology"
+        app:layout_constraintEnd_toEndOf="@+id/Resources"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/Resources"
+        app:layout_constraintStart_toStartOf="@+id/Resources"
+        app:layout_constraintTop_toTopOf="@+id/Characters"
+        app:layout_constraintVertical_bias="0.0"
+        tools:src="@tools:sample/backgrounds/scenic" />
+
+    <ImageButton
+        android:id="@+id/Fauna"
+        android:layout_width="95dp"
+        android:layout_height="98dp"
+        android:contentDescription="Fauna"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHeight_percent="0.075"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/Technology"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/Technology"
+        app:layout_constraintTop_toBottomOf="@+id/Technology"
+        app:layout_constraintVertical_bias="0.0"
+        tools:src="@tools:sample/backgrounds/scenic" />
+
+    <ImageButton
+        android:id="@+id/Resources"
+        android:layout_width="95dp"
+        android:layout_height="98dp"
+        android:contentDescription="Resources"
+        app:layout_constraintBottom_toBottomOf="@+id/Technology"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/Technology"
+        app:layout_constraintTop_toTopOf="@+id/Technology"
+        tools:src="@tools:sample/backgrounds/scenic" />
+
+    <ImageButton
+        android:id="@+id/Technology"
+        android:layout_width="95dp"
+        android:layout_height="98dp"
+        android:contentDescription="Technology"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.2"
-        app:layout_constraintWidth_percent="0.4" />
+        tools:src="@tools:sample/backgrounds/scenic" />
+
+    <ImageButton
+        android:id="@+id/Building"
+        android:layout_width="95dp"
+        android:layout_height="98dp"
+        android:contentDescription="Building"
+        app:layout_constraintBottom_toTopOf="@+id/Flora"
+        app:layout_constraintEnd_toStartOf="@+id/Characters"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/Flora"
+        app:layout_constraintTop_toTopOf="@+id/Characters"
+        app:layout_constraintVertical_bias="0.0"
+        tools:src="@tools:sample/backgrounds/scenic" />
+
+    <ImageButton
+        android:id="@+id/Characters"
+        android:layout_width="95dp"
+        android:layout_height="98dp"
+        android:contentDescription="Characters"
+        app:layout_constraintBottom_toTopOf="@+id/Technology"
+        app:layout_constraintEnd_toEndOf="@+id/Technology"
+        app:layout_constraintStart_toStartOf="@+id/Technology"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        tools:src="@tools:sample/backgrounds/scenic" />
+
+    <ImageButton
+        android:id="@+id/Flora"
+        android:layout_width="95dp"
+        android:layout_height="98dp"
+        android:contentDescription="Flora"
+        app:layout_constraintBottom_toBottomOf="@+id/Technology"
+        app:layout_constraintEnd_toStartOf="@+id/Technology"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/Technology"
+        app:layout_constraintVertical_bias="0.0"
+        tools:src="@tools:sample/backgrounds/scenic" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/CategoryButtons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:constraint_referenced_ids="Gear,Fauna,Resources,Technology,Building,Characters,Flora"
+        tools:visibility="gone" />
 
     <Button
-        android:id="@+id/btn_plants"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:text="Plants"
-        app:autoSizeTextType="none"
+        android:id="@+id/Weapons"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:text="Weapons"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHeight_percent="0.075"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.35"
-        app:layout_constraintWidth_percent="0.4" />
+        app:layout_constraintVertical_bias="0.344" />
 
     <Button
-        android:id="@+id/btn_valuables"
+        android:id="@+id/Apparel"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:text="Valuables"
+        android:layout_height="wrap_content"
+        android:text="Apparel"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHeight_percent="0.075"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5"
-        app:layout_constraintWidth_percent="0.4" />
+        app:layout_constraintEnd_toEndOf="@+id/Weapons"
+        app:layout_constraintStart_toStartOf="@+id/Weapons"
+        app:layout_constraintTop_toBottomOf="@+id/Weapons"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
-        android:id="@+id/btn_traits"
+        android:id="@+id/Armor"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@android:drawable/btn_dialog"
-        android:text="Traits &amp; Moods"
+        android:layout_height="wrap_content"
+        android:text="Armor"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHeight_percent="0.075"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/Apparel"
+        app:layout_constraintStart_toStartOf="@+id/Apparel"
+        app:layout_constraintTop_toBottomOf="@+id/Apparel"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/Clothing"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Clothing"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/Armor"
+        app:layout_constraintStart_toStartOf="@+id/Armor"
+        app:layout_constraintTop_toBottomOf="@+id/Armor"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/Utility"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Utility"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/Clothing"
+        app:layout_constraintStart_toStartOf="@+id/Clothing"
+        app:layout_constraintTop_toBottomOf="@+id/Clothing"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/ItemsButtons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="Weapons,Apparel,Armor,Clothing,Utility"
+        tools:visibility="gone" />
+
+    <Button
+        android:id="@+id/Materials"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Materials"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.65"
-        app:layout_constraintWidth_percent="0.4" />
+        app:layout_constraintVertical_bias="0.3" />
+
+    <Button
+        android:id="@+id/Textiles"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Textiles"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/Materials"
+        app:layout_constraintStart_toStartOf="@+id/Materials"
+        app:layout_constraintTop_toBottomOf="@+id/Materials"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/Drugs"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Drugs"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/Textiles"
+        app:layout_constraintStart_toStartOf="@+id/Textiles"
+        app:layout_constraintTop_toBottomOf="@+id/Textiles"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/Food"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Food"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/Drugs"
+        app:layout_constraintStart_toStartOf="@+id/Drugs"
+        app:layout_constraintTop_toBottomOf="@+id/Drugs"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/Medicine"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Medicine"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/Food"
+        app:layout_constraintStart_toStartOf="@+id/Food"
+        app:layout_constraintTop_toBottomOf="@+id/Food"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/ResourceButtons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="Food,Textiles,Materials,Medicine,Drugs" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
