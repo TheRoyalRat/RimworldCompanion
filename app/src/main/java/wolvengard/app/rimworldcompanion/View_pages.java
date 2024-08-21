@@ -3,15 +3,23 @@ package wolvengard.app.rimworldcompanion;
 import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.Group;
+import androidx.fragment.app.FragmentContainerView;
 
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.bumptech.glide.Glide;
 import com.example.rimworldcompanion.R;
 
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -19,6 +27,8 @@ public class View_pages extends AppCompatActivity {
     private Group categoryButtons;
     private Group itemsButtons;
     private Group resourcesButtons;
+    private ViewGroup rootLayout;
+    private FragmentContainerView RecordListFragment;
 
     private static final Map<String, String> iconUrls = new HashMap<>();
     private static final Map<String, View.OnClickListener> clickListeners = new HashMap<>();
@@ -39,7 +49,8 @@ public class View_pages extends AppCompatActivity {
         categoryButtons = findViewById(R.id.CategoryButtons);
         itemsButtons = findViewById(R.id.ItemsButtons);
         resourcesButtons = findViewById(R.id.ResourceButtons);
-        ViewGroup rootLayout = findViewById(R.id.rootLayout);
+        rootLayout = findViewById(R.id.rootLayout);
+        RecordListFragment = findViewById(R.id.RecordListFragment);
 
         initializeIconUrls();
         setupClickListeners();
@@ -54,6 +65,16 @@ public class View_pages extends AppCompatActivity {
                     Glide.with(this).load(iconUrl).into((ImageButton) view);
                 }
                 view.setOnClickListener(clickListeners.get(viewName));
+            }
+        }
+
+        for (int i = 0; i < rootLayout.getChildCount(); i++) {
+            View view = rootLayout.getChildAt(i);
+            if (view instanceof Button) {
+                String viewName = getResources().getResourceEntryName(view.getId());
+                String url = "https://rimworldwiki.com/wiki/" + viewName;
+
+                view.setOnClickListener(v -> displayRecords(viewName));
             }
         }
     }
@@ -86,6 +107,36 @@ public class View_pages extends AppCompatActivity {
             }
         });
     }
+
+    private void displayRecords(String pageName){
+        String url = "https://rimworldwiki.com/wiki/" + pageName;
+
+        new Thread(() -> {
+            try {
+                Document doc = Jsoup.connect(url).get();
+
+                Element table = doc.select("table").first();
+                Elements rows = table.select("tr");
+
+                for (Element row : rows) {
+                    Elements cells = row.select("td");
+
+                    if (!cells.isEmpty()) {
+                        String buttonText = cells.get(0).text();
+
+                        Button button = new Button(this);
+                        button.setText(buttonText);
+
+                        runOnUiThread(() -> RecordListFragment.addView(button));
+                    }
+                }
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }).start();
+    }
+
 
     private void showButtons(Group groupToShow) {
         categoryButtons.setVisibility(View.GONE);

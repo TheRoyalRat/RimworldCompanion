@@ -42,6 +42,7 @@ dependencies {
     implementation(libs.jsoup)
     implementation(libs.recyclerview)
     implementation(libs.constraintlayout)
+    implementation(libs.legacy.support.v4)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
